@@ -1,0 +1,1154 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     43140,       1153]
+NotebookOptionsPosition[     36643,       1036]
+NotebookOutlinePosition[     37046,       1052]
+CellTagsIndexPosition[     37003,       1049]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<JLink`\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+  "AddToClassPath", "[", 
+   "\"\</Users/Hunter/Development/Wolfram \
+Mathematica/javaplex-4.3.4/dist/javaplex/library/javaplex.jar\>\"", "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Plex4", "=", 
+    RowBox[{
+    "LoadJavaClass", "[", "\"\<edu.stanford.math.plex4.api.Plex4\>\"", 
+     "]"}]}], ";"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"PointCloudEx", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.examples.PointCloudExamples\>\"", "]"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"BarCodeCollection", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.homology.barcodes.BarcodeCollection\>\"", 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"JPSimplex", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.homology.chain_basis.Simplex\>\"", "]"}]}],
+     ";", "\n", 
+    RowBox[{"AbstractPersistenceAlgorithm", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.homology.interfaces.\
+AbstractPersistenceAlgorithm\>\"", "]"}]}], ";", "\n", 
+    RowBox[{"EuclideanMetricSpace", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.metric.impl.EuclideanMetricSpace\>\"", 
+      "]"}]}], ";", "\n", 
+    RowBox[{"LandmarkSelector", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.metric.landmark.LandmarkSelector\>\"", 
+      "]"}]}], ";", "\n", 
+    RowBox[{"MaxMinLandmarkSelector", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.metric.landmark.MaxMinLandmarkSelector\>\"\
+", "]"}]}], ";", "\n", 
+    RowBox[{"LazyWitnessStream", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", 
+      "\"\<edu.stanford.math.plex4.streams.impl.LazyWitnessStream\>\"", 
+      "]"}]}], ";", "\n", 
+    RowBox[{"Plex4", "=", 
+     RowBox[{
+     "LoadJavaClass", "[", "\"\<edu.stanford.math.plex4.api.Plex4\>\"", 
+      "]"}]}], ";"}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.905600179543281*^9, 3.9056001869939947`*^9}, {
+   3.9056749797681513`*^9, 3.905675072828453*^9}, 3.905675202946765*^9, {
+   3.905675280770153*^9, 3.9056752824336843`*^9}, {3.90567605759066*^9, 
+   3.905676081251761*^9}, {3.905676319526031*^9, 3.9056763272023087`*^9}, 
+   3.905678115396759*^9},
+ CellLabel->
+  "In[263]:=",ExpressionUUID->"c65af247-9e72-4750-a7d8-b17e5db76a8c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "AddToClassPath", "[", 
+   "\"\</Users/Hunter/Development/Wolfram Mathematica/\>\"", "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"MathematicaHelper", " ", "=", " ", 
+   RowBox[{
+   "LoadJavaClass", "[", "\"\<myhelpers.MathematicaHelper\>\"", "]"}]}], 
+  ";"}], "\n"}], "Input",
+ CellChangeTimes->{{3.9056838661569843`*^9, 3.905683919538618*^9}, {
+   3.905684099504466*^9, 3.90568410382295*^9}, {3.905684290155077*^9, 
+   3.905684300803625*^9}, 3.905684467589345*^9},
+ CellLabel->
+  "In[309]:=",ExpressionUUID->"e3e67118-f23d-43d1-a740-b3c29b063606"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"stream", " ", "=", " ", 
+  RowBox[{"Plex4`createExplicitSimplexStream", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9056005711420403`*^9, 3.905600594055052*^9}, {
+  3.905602288107555*^9, 3.905602288270644*^9}, {3.905602428625688*^9, 
+  3.905602428657569*^9}},
+ CellLabel->
+  "In[231]:=",ExpressionUUID->"c9262126-6e5e-4360-ba1c-5c9f2f35d5eb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "streams", ".", 
+     "impl", ".", "ExplicitSimplexStream"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject31105990799654913]], "Output",
+ CellChangeTimes->{3.905602288974552*^9, 3.905602429411173*^9, 
+  3.90560305441817*^9, 3.9056032646968412`*^9, 3.905605159710042*^9},
+ CellLabel->
+  "Out[231]=",ExpressionUUID->"e4814f6e-8d6a-4e4c-a13e-f91420d3d7f8"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", "0", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", "1", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stream", "@", 
+   RowBox[{"addVertex", "[", "2", "]"}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"stream", "@", 
+     RowBox[{"addElement", "[", 
+      RowBox[{"(", 
+       RowBox[{"0", ",", "1"}], ")"}], "]"}]}], "\[IndentingNewLine]", 
+    RowBox[{"stream", "@", 
+     RowBox[{"addElement", "[", 
+      RowBox[{"(", 
+       RowBox[{"2", ",", "1"}], ")"}], "]"}]}], "\[IndentingNewLine]", 
+    RowBox[{"stream", "@", 
+     RowBox[{"addElement", "[", 
+      RowBox[{"(", 
+       RowBox[{"0", ",", "2"}], ")"}], "]"}]}]}], "*)"}]}], "\n", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], "]"}]}], "\n", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1"}], "}"}], "]"}]}], "\n", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stream", "@", 
+   RowBox[{"addElement", "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "2"}], "}"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"finalizeStream", "[", "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.9056019947779837`*^9, 3.905602064959014*^9}, {
+  3.905602437169857*^9, 3.905602472108614*^9}, {3.9056030394670362`*^9, 
+  3.905603089407853*^9}, {3.9056031883437357`*^9, 3.9056031916230097`*^9}, {
+  3.905603224617634*^9, 3.9056032699617987`*^9}, {3.905604517668165*^9, 
+  3.905604531765428*^9}},
+ CellLabel->
+  "In[232]:=",ExpressionUUID->"9ff75e41-f474-47a8-96cc-465a7c265ae3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"num_simplices", " ", "=", " ", 
+  RowBox[{"stream", "@", 
+   RowBox[{"getSize", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.905602079511113*^9, 3.905602090321802*^9}, {
+  3.905602478142318*^9, 3.90560247870572*^9}, {3.90560327703891*^9, 
+  3.905603277509667*^9}},
+ CellLabel->
+  "In[240]:=",ExpressionUUID->"20e2d017-0573-4b22-b771-c21aa4dc86b4"],
+
+Cell[BoxData["7"], "Output",
+ CellChangeTimes->{
+  3.905602482234612*^9, {3.905603273902554*^9, 3.905603277892561*^9}, 
+   3.905604535283836*^9, 3.9056051650256033`*^9},
+ CellLabel->
+  "Out[240]=",ExpressionUUID->"ee4e421c-a34c-405f-bcad-8126fa69753b"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"num_simplices", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.90560248975523*^9, 3.9056024929524927`*^9}},
+ CellLabel->
+  "In[112]:=",ExpressionUUID->"4f15c152-8289-4df5-a126-edf716bd8c1b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"persistence", " ", "=", " ", 
+  RowBox[{"Plex4`getModularSimplicialAlgorithm", "[", 
+   RowBox[{"3", ",", "2"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.905603287383438*^9, 3.90560330916466*^9}},
+ CellLabel->
+  "In[241]:=",ExpressionUUID->"8c082037-6fcd-4697-8b50-470de2799ec4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "autogen", ".", 
+     "homology", ".", "IntAbsoluteHomology"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject14461461640249345]], "Output",
+ CellChangeTimes->{3.905603311984702*^9, 3.905604538179934*^9, 
+  3.905605166560914*^9},
+ CellLabel->
+  "Out[241]=",ExpressionUUID->"94a76c87-89c7-49e7-90d2-ed549b224c54"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"intervals", " ", "=", " ", 
+  RowBox[{"persistence", "@", 
+   RowBox[{
+   "computeIntervals", "[", "stream", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"output", " ", "=", " ", 
+  RowBox[{"intervals", "@", 
+   RowBox[{"toString", "[", "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.905603319004723*^9, 3.905603333383617*^9}, {
+  3.905604544161352*^9, 3.90560455157974*^9}},
+ CellLabel->
+  "In[242]:=",ExpressionUUID->"f901022e-5c04-46b4-88aa-044017646f27"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "homology", ".", 
+     "barcodes", ".", "BarcodeCollection"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject10198961948196865]], "Output",
+ CellChangeTimes->{
+  3.905603334134548*^9, {3.9056045412895603`*^9, 3.905604552624614*^9}, 
+   3.905605169563655*^9},
+ CellLabel->
+  "Out[242]=",ExpressionUUID->"cb59ffdc-e3cc-48f6-be79-0ec758e686b1"],
+
+Cell[BoxData["\<\"Dimension: 0\\n[0.0, infinity)\\n\"\>"], "Output",
+ CellChangeTimes->{
+  3.905603334134548*^9, {3.9056045412895603`*^9, 3.905604552624614*^9}, 
+   3.9056051695665607`*^9},
+ CellLabel->
+  "Out[243]=",ExpressionUUID->"116cd75a-a97f-434d-8201-cebae4b64f1b"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.9056033746967688`*^9},
+ NumberMarks->False,ExpressionUUID->"e4e68f66-7929-4a1e-adde-9249751a4c59"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"intervals", " ", "=", " ", 
+  RowBox[{"persistence", "@", 
+   RowBox[{
+   "computeAnnotatedIntervals", "[", "stream", 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"output", "  ", "=", " ", 
+  RowBox[{"intervals", "@", 
+   RowBox[{"toString", "[", "]"}]}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.905603389241153*^9, 3.905603428811942*^9}, {
+  3.905604457866939*^9, 3.905604469591432*^9}},
+ CellLabel->
+  "In[244]:=",ExpressionUUID->"b38b94fc-962c-450b-84d2-e0c27d076dbd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "homology", ".", 
+     "barcodes", ".", "AnnotatedBarcodeCollection"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject19179617868840961]], "Output",
+ CellChangeTimes->{{3.905603391672126*^9, 3.9056033956607533`*^9}, 
+   3.9056034294969397`*^9, 3.905604470884171*^9, 3.905604566067432*^9, 
+   3.90560517181728*^9},
+ CellLabel->
+  "Out[244]=",ExpressionUUID->"0f81ef21-6014-4a12-9eb4-fdd7db25d751"],
+
+Cell[BoxData["\<\"Dimension: 0\\n[0.0, infinity): [0]\\n\"\>"], "Output",
+ CellChangeTimes->{{3.905603391672126*^9, 3.9056033956607533`*^9}, 
+   3.9056034294969397`*^9, 3.905604470884171*^9, 3.905604566067432*^9, 
+   3.905605171819386*^9},
+ CellLabel->
+  "Out[245]=",ExpressionUUID->"4d37e14c-7d99-468e-85a3-7f21bc6ec6cf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\"\<Dimension: 0\\n[0.0, infinity): [0]\\nDimension: 1\\n[0.0, \
+infinity): [1,2] + [0,2] + [0,1]\\n\\n\>\""], "Input",
+ CellChangeTimes->{{3.90560467903864*^9, 3.905604679042025*^9}},
+ CellLabel->
+  "In[246]:=",ExpressionUUID->"3d36b3d6-aed0-49d8-84b4-b1d70c242b54"],
+
+Cell[BoxData["\<\"Dimension: 0\\n[0.0, infinity): [0]\\nDimension: 1\\n[0.0, \
+infinity): [1,2] + [0,2] + [0,1]\\n\\n\"\>"], "Output",
+ CellChangeTimes->{3.905605179064557*^9},
+ CellLabel->
+  "Out[246]=",ExpressionUUID->"b8275b6e-ecfa-45f4-886b-61ba43c1f573"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.9056034550378838`*^9},
+ NumberMarks->False,ExpressionUUID->"41e6600f-e6fd-4d20-8bb6-0bce5e9adcd9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"dimension", "=", "9"}], "\n", 
+ RowBox[{"stream", "=", 
+  RowBox[{"Plex4`createExplicitSimplexStream", "[", "]"}]}], "\n", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", 
+       RowBox[{"dimension", " ", "+", "1"}]}], "}"}]}], "]"}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.905603455871982*^9, 3.905603458436069*^9}, {
+   3.905604683733918*^9, 3.9056046999055862`*^9}, 3.905604740766872*^9, {
+   3.905604801004327*^9, 3.90560480239467*^9}, {3.905605197571002*^9, 
+   3.9056052054271173`*^9}, {3.905605252386292*^9, 3.905605281671712*^9}},
+ CellLabel->
+  "In[257]:=",ExpressionUUID->"66d17c00-dc2e-46f1-af45-f42c68003808"],
+
+Cell[BoxData["9"], "Output",
+ CellChangeTimes->{
+  3.905604743549404*^9, 3.905604811481513*^9, 3.9056051875065403`*^9, {
+   3.9056052676707897`*^9, 3.905605282816633*^9}},
+ CellLabel->
+  "Out[257]=",ExpressionUUID->"e0e600f0-0f02-4a77-9b7a-8b567321d4d5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "streams", ".", 
+     "impl", ".", "ExplicitSimplexStream"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject13725783134568449]], "Output",
+ CellChangeTimes->{
+  3.905604743549404*^9, 3.905604811481513*^9, 3.9056051875065403`*^9, {
+   3.9056052676707897`*^9, 3.905605282818974*^9}},
+ CellLabel->
+  "Out[258]=",ExpressionUUID->"548e3849-5211-4952-90c7-8fc8b2e8b3b6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"stream", "@", 
+  RowBox[{"ensureAllFaces", "[", "]"}]}], "\n", 
+ RowBox[{"stream", "@", 
+  RowBox[{"removeElementIfPresent", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", 
+       RowBox[{"dimension", "+", "1"}]}], "}"}]}], "]"}], "]"}]}], "\n", 
+ RowBox[{"stream", "@", 
+  RowBox[{"finalizeStream", "[", "]"}]}], "\n"}], "Input",
+ CellChangeTimes->{{3.905603455871982*^9, 3.905603458436069*^9}, {
+   3.905604683733918*^9, 3.9056046999055862`*^9}, 3.905604740766872*^9, {
+   3.9056048169682417`*^9, 3.905604819245207*^9}, {3.9056052935721893`*^9, 
+   3.905605320927102*^9}},
+ CellLabel->
+  "In[260]:=",ExpressionUUID->"45abd082-817f-465d-94ec-b1fb15fa51e4"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.905605321611657*^9},
+ CellLabel->
+  "Out[261]=",ExpressionUUID->"70db654b-d56f-484b-b3c9-febd02cc5e0b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"num_sim", "  ", "=", " ", 
+  RowBox[{"stream", "@", 
+   RowBox[{"getSize", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9056048312825413`*^9, 3.905604864077013*^9}},
+ CellLabel->
+  "In[263]:=",ExpressionUUID->"e08f02a9-ee63-4a48-a861-954a011b16a2"],
+
+Cell[BoxData["2046"], "Output",
+ CellChangeTimes->{3.905604864722342*^9, 3.90560519188039*^9, 
+  3.905605327674979*^9},
+ CellLabel->
+  "Out[263]=",ExpressionUUID->"b4d4a500-c8c3-4f09-a08f-734771a12961"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"persistence", " ", "=", " ", 
+  RowBox[{"Plex4`getModularSimplicialAlgorithm", "[", 
+   RowBox[{
+    RowBox[{"dimension", "+", "1"}], ",", " ", "2"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9056053424863663`*^9, 3.90560536125062*^9}},
+ CellLabel->
+  "In[264]:=",ExpressionUUID->"1400a01d-6444-44a1-8978-d17e2b8271e8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "autogen", ".", 
+     "homology", ".", "IntAbsoluteHomology"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject35417208104419329]], "Output",
+ CellChangeTimes->{3.90560536300873*^9},
+ CellLabel->
+  "Out[264]=",ExpressionUUID->"d1f61af4-24fa-4b4c-9d08-18ee7cf40d0b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"intervals", " ", "=", " ", 
+  RowBox[{"persistence", "@", 
+   RowBox[{
+    RowBox[{"computeIntervals", "[", "stream", "]"}], "@", 
+    RowBox[{"toString", "[", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.905605368577765*^9, 3.905605423562851*^9}},
+ CellLabel->
+  "In[266]:=",ExpressionUUID->"b0434473-cfeb-40c1-a04c-8016693c0a6d"],
+
+Cell[BoxData["\<\"Dimension: 0\\n[0.0, infinity)\\nDimension: 9\\n[0.0, \
+infinity)\\n\"\>"], "Output",
+ CellChangeTimes->{3.905605387650551*^9, 3.905605424134684*^9},
+ CellLabel->
+  "Out[266]=",ExpressionUUID->"786ae4f8-7c2f-4d84-832a-da3104599e26"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"stream", "=", 
+  RowBox[{"Plex4`createExplicitSimplexStream", "[", "]"}]}]], "Input",
+ CellLabel->
+  "In[267]:=",ExpressionUUID->"c7081898-fcde-4afa-90dd-786e617fbc02"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "streams", ".", 
+     "impl", ".", "ExplicitSimplexStream"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject32943907717251073]], "Output",
+ CellChangeTimes->{3.905605671157234*^9},
+ CellLabel->
+  "Out[267]=",ExpressionUUID->"0a473882-4a2b-45bf-9a4c-b090ad3e51e1"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9056056771875677`*^9, 3.905605753813068*^9}, 
+   3.9056059577133207`*^9},ExpressionUUID->"ab4ed5ff-ed81-43a1-a742-\
+e156e30e0234"],
+
+Cell[BoxData[{
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", 
+   RowBox[{"1", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", 
+   RowBox[{"2", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", 
+   RowBox[{"3", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", 
+   RowBox[{"4", ",", "0"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addVertex", "[", 
+   RowBox[{"5", ",", "1"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}], ",", "0"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3"}], "}"}], ",", "0"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"3", ",", "4"}], "}"}], ",", "0"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"4", ",", "1"}], "}"}], ",", "0"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"3", ",", "5"}], "}"}], ",", "2"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"4", ",", "5"}], "}"}], ",", "3"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"addElement", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"3", ",", "4", ",", "5"}], "}"}], ",", "7"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"stream", "@", 
+  RowBox[{"finalizeStream", "[", "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.905606001671399*^9, 3.9056061637582893`*^9}},
+ CellLabel->
+  "In[293]:=",ExpressionUUID->"694f5d50-7bdb-4ae1-b2ec-0648ae681d3f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"persistence", " ", "=", " ", 
+  RowBox[{"Plex4`getModularSimplicialAlgorithm", "[", 
+   RowBox[{"3", ",", "2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"intervals", " ", "=", " ", 
+  RowBox[{"persistence", "@", 
+   RowBox[{
+    RowBox[{"computeAnnotatedIntervals", "[", "stream", "]"}], "@", 
+    RowBox[{"toString", "[", "]"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.9056061821766977`*^9, 3.905606217165888*^9}, {
+  3.90560625512151*^9, 3.9056062617427197`*^9}},
+ CellLabel->
+  "In[308]:=",ExpressionUUID->"a90d9641-e9cd-40f8-a10c-ad14bf5e4139"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "autogen", ".", 
+     "homology", ".", "IntAbsoluteHomology"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject26936846197981185]], "Output",
+ CellChangeTimes->{3.905606218134061*^9, 3.905606262284971*^9},
+ CellLabel->
+  "Out[308]=",ExpressionUUID->"02ce84fd-41a2-4485-bcf4-cfaad664a9fc"],
+
+Cell[BoxData["\<\"Dimension: 0\\n[1.0, 2.0): -[3] + [5]\\n[0.0, infinity): \
+[1]\\nDimension: 1\\n[3.0, 7.0): [4,5] + [3,4] + -[3,5]\\n[0.0, infinity): \
+[1,4] + [2,3] + [1,2] + [3,4]\\n\"\>"], "Output",
+ CellChangeTimes->{3.905606218134061*^9, 3.905606262287492*^9},
+ CellLabel->
+  "Out[309]=",ExpressionUUID->"ade82e68-e792-4129-8851-766595b8cfb6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"list", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "3"}], "}"}]}], "}"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"javaArray", "=", 
+   RowBox[{"MakeJavaObject", "[", "list", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"javaArray", "\n"}], "\n", 
+ RowBox[{"m_space", " ", "=", " ", 
+  RowBox[{"Plex4`createEuclideanMetricSpace", "[", "list", "]"}]}], "\n", 
+ RowBox[{"m_space", "@", 
+  RowBox[{
+   RowBox[{"getPoint", "[", "0", "]"}], "@", 
+   RowBox[{"toString", "[", "]"}]}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.905674033226768*^9, 3.9056740663857403`*^9}, {
+   3.9056826532196903`*^9, 3.9056826931831703`*^9}, {3.905682858557179*^9, 
+   3.905682863458186*^9}, {3.9056828972989807`*^9, 3.905682900114944*^9}, 
+   3.905682972484787*^9, {3.905683023360016*^9, 3.9056830339887123`*^9}, 
+   3.905683079219132*^9, {3.9056831158994427`*^9, 3.9056831393146143`*^9}, 
+   3.905683175393114*^9, 3.905683215518634*^9, {3.905683983106966*^9, 
+   3.905683990957706*^9}, 3.905684503259444*^9, {3.905684549232079*^9, 
+   3.9056845530324697`*^9}, {3.905684644878948*^9, 3.905684645730204*^9}, {
+   3.90568485780165*^9, 3.905684864684125*^9}, {3.9056849069883413`*^9, 
+   3.905684921609449*^9}, {3.905684954235817*^9, 3.9056849567810907`*^9}, {
+   3.905684991067939*^9, 3.9056850044444933`*^9}, {3.905685095700803*^9, 
+   3.905685161628373*^9}, {3.905685210096665*^9, 3.905685212989875*^9}, {
+   3.905685475778449*^9, 3.905685503645425*^9}},
+ CellLabel->
+  "In[359]:=",ExpressionUUID->"bf9f7e2d-ab1b-4aa4-a42e-42dd8545a363"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"[", 
+     RowBox[{"[", "I"}]}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject6542657765507073]], "Output",
+ CellChangeTimes->{{3.9056851029594393`*^9, 3.905685162665213*^9}, {
+  3.9056854789694347`*^9, 3.905685504333516*^9}},
+ CellLabel->
+  "Out[361]=",ExpressionUUID->"118620a3-17cb-48d5-bbaf-d7bc9ebdb378"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "metric", ".", 
+     "impl", ".", "EuclideanMetricSpace"}], "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject24084381467410433]], "Output",
+ CellChangeTimes->{{3.9056851029594393`*^9, 3.905685162665213*^9}, {
+  3.9056854789694347`*^9, 3.905685504337315*^9}},
+ CellLabel->
+  "Out[362]=",ExpressionUUID->"1cd977cc-5eb5-477d-b053-077142de7997"],
+
+Cell[BoxData[
+ RowBox[{"m_space", "[", 
+  RowBox[{
+   RowBox[{"getPoint", "[", "0", "]"}], "[", 
+   RowBox[{"toString", "[", "]"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{{3.9056851029594393`*^9, 3.905685162665213*^9}, {
+  3.9056854789694347`*^9, 3.9056855043413363`*^9}},
+ CellLabel->
+  "Out[363]=",ExpressionUUID->"f1d4f605-d76d-4a92-8208-d3b3259fa1c7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "3"}], "}"}]}], "}"}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[15]:=",ExpressionUUID->"263fd10d-ab9a-4445-88eb-b3edc0b9070b"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"-", "1"}], "0"},
+    {"1", "0"},
+    {"1", "2"},
+    {
+     RowBox[{"-", "1"}], "2"},
+    {"0", "3"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.9056744552830057`*^9, 3.905674484791614*^9}},
+ CellLabel->"Out[15]=",ExpressionUUID->"7e3996ba-4c30-48a2-a3ae-f932873ae39e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"First", "[", 
+   RowBox[{"Grid", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "3"}], "}"}]}], "}"}], "]"}], "]"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.905674513594241*^9, 3.9056745148157787`*^9}},
+ NumberMarks->False,
+ CellLabel->"In[17]:=",ExpressionUUID->"e938efd4-7629-474d-bb8d-efe2775b1231"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`], 
+    AbsoluteThickness[1.6], 
+    PointBox[{{-1., 0.}, {1., 0.}, {1., 2.}, {-1., 2.}, {0., 3.}}]}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "DefaultPlotStyle" -> {
+      Directive[
+       RGBColor[0.368417, 0.506779, 0.709798], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.880722, 0.611041, 0.142051], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.560181, 0.691569, 0.194885], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.528488, 0.470624, 0.701351], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.772079, 0.431554, 0.102387], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.363898, 0.618501, 0.782349], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[1, 0.75, 0], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.647624, 0.37816, 0.614037], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.571589, 0.586483, 0.], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.915, 0.3325, 0.2125], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+       AbsoluteThickness[1.6]]}, "DomainPadding" -> Scaled[0.02], 
+    "PointSizeFunction" -> "SmallPointSize", "RangePadding" -> Scaled[0.05], 
+    "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-1., 1.}, {0, 3.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.905674516011777*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"0371e60a-ab80-49d1-9836-0c624776bd93"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sphere", " ", "=", " ", 
+  RowBox[{"PointCloudEx", "@", 
+   RowBox[{"getRandomTorusPoints", "[", 
+    RowBox[{"2000", ",", "1", ",", "2"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.905675539201994*^9, 3.9056756342424994`*^9}, {
+  3.905675857679606*^9, 
+  3.905675891636964*^9}},ExpressionUUID->"d99438d7-38dd-440f-8b24-\
+c09975b99dd8"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   RowBox[{"JavaClass", "[", 
+    RowBox[{
+    "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "examples", ".", 
+     "PointCloudExamples"}], ",", "<>", "]"}],
+   JLink`JavaClass[
+   "edu.stanford.math.plex4.examples.PointCloudExamples", 3, {
+     JLink`JVM["vm1"]}, 1, 
+    "edu`stanford`math`plex4`examples`PointCloudExamples`", False, True]], 
+  "[", 
+  RowBox[{
+   RowBox[{"getRandomTorusPoints", "[", 
+    RowBox[{"2000", ",", "1", ",", "2"}], "]"}], "[", 
+   RowBox[{"toString", "[", "]"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.905675591266876*^9, {3.9056756366001253`*^9, 3.9056756619525013`*^9}, {
+   3.9056758616920357`*^9, 3.9056758844867487`*^9}},
+ CellLabel->"Out[62]=",ExpressionUUID->"bb75c05a-a22c-4217-b3fc-6e50773388de"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.905675662668591*^9, 
+  3.9056756685628643`*^9}},ExpressionUUID->"1110d87f-8e6a-4662-a5fb-\
+31294f9c060f"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.905676236068161*^9, 3.905676250097149*^9}, {
+  3.905676287270205*^9, 
+  3.9056763129890413`*^9}},ExpressionUUID->"809f6e22-9dc7-40a6-9f80-\
+196a987a8173"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"distances", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2", ",", 
+       RowBox[{"Sqrt", "[", "8", "]"}], ",", "2", ",", 
+       RowBox[{"Sqrt", "[", "10", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "2", ",", 
+       RowBox[{"Sqrt", "[", "8", "]"}], ",", 
+       RowBox[{"Sqrt", "[", "10", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Sqrt", "[", "8", "]"}], ",", "2", ",", "0", ",", "2", ",", 
+       RowBox[{"Sqrt", "[", "2", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"Sqrt", "[", "8", "]"}], ",", "2", ",", "0", ",", 
+       RowBox[{"Sqrt", "[", "2", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Sqrt", "[", "10", "]"}], ",", 
+       RowBox[{"Sqrt", "[", "10", "]"}], ",", 
+       RowBox[{"Sqrt", "[", "2", "]"}], ",", 
+       RowBox[{"Sqrt", "[", "2", "]"}], ",", "0"}], "}"}]}], "}"}]}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.905676347461578*^9, 3.905676347466259*^9}},
+ CellLabel->
+  "In[133]:=",ExpressionUUID->"ca2e4104-9f03-479b-9e7f-6ec9753ba552"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"2", " ", 
+      SqrtBox["2"]}], ",", "2", ",", 
+     SqrtBox["10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "2", ",", 
+     RowBox[{"2", " ", 
+      SqrtBox["2"]}], ",", 
+     SqrtBox["10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      SqrtBox["2"]}], ",", "2", ",", "0", ",", "2", ",", 
+     SqrtBox["2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"2", " ", 
+      SqrtBox["2"]}], ",", "2", ",", "0", ",", 
+     SqrtBox["2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SqrtBox["10"], ",", 
+     SqrtBox["10"], ",", 
+     SqrtBox["2"], ",", 
+     SqrtBox["2"], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.9056763490173597`*^9, 3.9056773352958612`*^9},
+ CellLabel->
+  "Out[133]=",ExpressionUUID->"a81b7b0d-0166-416d-ac47-859aad282bc1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixPlot", "[", "distances", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->
+  "In[112]:=",ExpressionUUID->"b9c50ce8-8fec-448d-b16d-cd96f67a2dd5"],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJxTTMoPSmVmYGBghWIQGwI+2D+sElnn/vCWPQMKwBR//HrL5jLVt/ZHYutF
+vn19YX+AQ3TBU4879rjEYeag09M+pfz7wvnGPlZ8ySo1uSf2F5jN3ipWHrKv
+D3TQjp371v6A05yLpfPu209u9Yt6kJaHUz0u83G5h1rm41KPy15qmY/L/YTi
+kdbhj24vANRU7Ps=
+   "], {{0, 0}, {5, 5}}, {0, 1}],
+  Frame->True,
+  FrameLabel->{None, None},
+  FrameTicks->{{{{4.5, 
+       FormBox["1", TraditionalForm]}, {3.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {1.5, 
+       FormBox["4", TraditionalForm]}, {0.5, 
+       FormBox["5", TraditionalForm]}}, {{4.5, 
+       FormBox["1", TraditionalForm]}, {3.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {1.5, 
+       FormBox["4", TraditionalForm]}, {0.5, 
+       FormBox["5", TraditionalForm]}}}, {{{0.5, 
+       FormBox["1", TraditionalForm]}, {1.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {3.5, 
+       FormBox["4", TraditionalForm]}, {4.5, 
+       FormBox["5", TraditionalForm]}}, {{0.5, 
+       FormBox["1", TraditionalForm]}, {1.5, 
+       FormBox["2", TraditionalForm]}, {2.5, 
+       FormBox["3", TraditionalForm]}, {3.5, 
+       FormBox["4", TraditionalForm]}, {4.5, 
+       FormBox["5", TraditionalForm]}}}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultPlotStyle" -> 
+    Automatic, "DomainPadding" -> Scaled[0.02], "RangePadding" -> 
+    Scaled[0.05]}]], "Output",
+ CellChangeTimes->{3.905676352822074*^9},
+ CellLabel->
+  "Out[112]=",ExpressionUUID->"1657438b-e321-4bba-959f-bdf2464dfa69"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"EuclideanMetricSpace", "=", 
+    RowBox[{
+    "LoadJavaClass", "[", 
+     "\"\<edu.stanford.math.plex4.metric.impl.EuclideanMetricSpace\>\"", 
+     "]"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"metric", "=", 
+   RowBox[{
+   "LoadJavaClass", "[", 
+    "\"\<edu.stanford.math.plex4.metric.impl.ExplicitMetricSpace\>\"", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.905676375438345*^9, 3.905676437979191*^9}, {
+  3.905677026342017*^9, 3.9056770494910393`*^9}, {3.9056771293335047`*^9, 
+  3.905677134226348*^9}},
+ CellLabel->
+  "In[134]:=",ExpressionUUID->"149c0946-6469-4e3e-b9e9-7d97da1cffb2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"JavaClass", "[", 
+   RowBox[{
+   "edu", ".", "stanford", ".", "math", ".", "plex4", ".", "metric", ".", 
+    "impl", ".", "ExplicitMetricSpace"}], ",", "<>", "]"}],
+  JLink`JavaClass[
+  "edu.stanford.math.plex4.metric.impl.ExplicitMetricSpace", 20, {
+    JLink`JVM["vm1"]}, 1, 
+   "edu`stanford`math`plex4`metric`impl`ExplicitMetricSpace`", False, 
+   True]]], "Output",
+ CellChangeTimes->{3.905676406722704*^9, 3.905676440868469*^9, 
+  3.905677028926386*^9, 3.9056771416356792`*^9, 3.905677340275489*^9},
+ CellLabel->
+  "Out[134]=",ExpressionUUID->"ca7e985f-123f-4e0c-8c3f-df14a96e50c0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\n", "\n"}]], "Input",
+ CellChangeTimes->{{3.905677839973995*^9, 3.905677839977632*^9}, 
+   3.905677911313583*^9, {3.905677989401557*^9, 3.905678014687521*^9}, {
+   3.905678091741601*^9, 
+   3.9056781021198597`*^9}},ExpressionUUID->"cdfeb3f4-d030-4f8d-b257-\
+bf5f0beae772"]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{1920, Automatic}, {Automatic, -583}},
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e0d3ac29-73ff-42e0-bd64-366387edec0b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 2568, 68, 703, "Input",ExpressionUUID->"c65af247-9e72-4750-a7d8-b17e5db76a8c"],
+Cell[2971, 83, 587, 15, 115, "Input",ExpressionUUID->"e3e67118-f23d-43d1-a740-b3c29b063606"],
+Cell[CellGroupData[{
+Cell[3583, 102, 368, 7, 30, "Input",ExpressionUUID->"c9262126-6e5e-4360-ba1c-5c9f2f35d5eb"],
+Cell[3954, 111, 538, 11, 56, "Output",ExpressionUUID->"e4814f6e-8d6a-4e4c-a13e-f91420d3d7f8"]
+}, Open  ]],
+Cell[4507, 125, 1866, 48, 283, "Input",ExpressionUUID->"9ff75e41-f474-47a8-96cc-465a7c265ae3"],
+Cell[CellGroupData[{
+Cell[6398, 177, 374, 8, 30, "Input",ExpressionUUID->"20e2d017-0573-4b22-b771-c21aa4dc86b4"],
+Cell[6775, 187, 252, 5, 34, "Output",ExpressionUUID->"ee4e421c-a34c-405f-bcad-8126fa69753b"]
+}, Open  ]],
+Cell[7042, 195, 224, 4, 52, "Input",ExpressionUUID->"4f15c152-8289-4df5-a126-edf716bd8c1b"],
+Cell[CellGroupData[{
+Cell[7291, 203, 303, 6, 30, "Input",ExpressionUUID->"8c082037-6fcd-4697-8b50-470de2799ec4"],
+Cell[7597, 211, 495, 11, 56, "Output",ExpressionUUID->"94a76c87-89c7-49e7-90d2-ed549b224c54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8129, 227, 479, 11, 52, "Input",ExpressionUUID->"f901022e-5c04-46b4-88aa-044017646f27"],
+Cell[8611, 240, 524, 12, 56, "Output",ExpressionUUID->"cb59ffdc-e3cc-48f6-be79-0ec758e686b1"],
+Cell[9138, 254, 272, 5, 77, "Output",ExpressionUUID->"116cd75a-a97f-434d-8201-cebae4b64f1b"]
+}, Open  ]],
+Cell[9425, 262, 146, 2, 30, "Input",ExpressionUUID->"e4e68f66-7929-4a1e-adde-9249751a4c59"],
+Cell[CellGroupData[{
+Cell[9596, 268, 518, 12, 73, "Input",ExpressionUUID->"b38b94fc-962c-450b-84d2-e0c27d076dbd"],
+Cell[10117, 282, 583, 13, 56, "Output",ExpressionUUID->"0f81ef21-6014-4a12-9eb4-fdd7db25d751"],
+Cell[10703, 297, 322, 5, 77, "Output",ExpressionUUID->"4d37e14c-7d99-468e-85a3-7f21bc6ec6cf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11062, 307, 281, 4, 52, "Input",ExpressionUUID->"3d36b3d6-aed0-49d8-84b4-b1d70c242b54"],
+Cell[11346, 313, 259, 4, 140, "Output",ExpressionUUID->"b8275b6e-ecfa-45f4-886b-61ba43c1f573"]
+}, Open  ]],
+Cell[11620, 320, 146, 2, 30, "Input",ExpressionUUID->"41e6600f-e6fd-4d20-8bb6-0bce5e9adcd9"],
+Cell[CellGroupData[{
+Cell[11791, 326, 768, 17, 73, "Input",ExpressionUUID->"66d17c00-dc2e-46f1-af45-f42c68003808"],
+Cell[12562, 345, 254, 5, 34, "Output",ExpressionUUID->"e0e600f0-0f02-4a77-9b7a-8b567321d4d5"],
+Cell[12819, 352, 547, 12, 56, "Output",ExpressionUUID->"548e3849-5211-4952-90c7-8fc8b2e8b3b6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13403, 369, 743, 17, 94, "Input",ExpressionUUID->"45abd082-817f-465d-94ec-b1fb15fa51e4"],
+Cell[14149, 388, 156, 3, 34, "Output",ExpressionUUID->"70db654b-d56f-484b-b3c9-febd02cc5e0b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14342, 396, 275, 6, 30, "Input",ExpressionUUID->"e08f02a9-ee63-4a48-a861-954a011b16a2"],
+Cell[14620, 404, 202, 4, 34, "Output",ExpressionUUID->"b4d4a500-c8c3-4f09-a08f-734771a12961"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14859, 413, 343, 7, 52, "Input",ExpressionUUID->"1400a01d-6444-44a1-8978-d17e2b8271e8"],
+Cell[15205, 422, 447, 10, 56, "Output",ExpressionUUID->"d1f61af4-24fa-4b4c-9d08-18ee7cf40d0b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15689, 437, 355, 8, 30, "Input",ExpressionUUID->"b0434473-cfeb-40c1-a04c-8016693c0a6d"],
+Cell[16047, 447, 250, 4, 119, "Output",ExpressionUUID->"786ae4f8-7c2f-4d84-832a-da3104599e26"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16334, 456, 192, 4, 30, "Input",ExpressionUUID->"c7081898-fcde-4afa-90dd-786e617fbc02"],
+Cell[16529, 462, 446, 10, 56, "Output",ExpressionUUID->"0a473882-4a2b-45bf-9a4c-b090ad3e51e1"]
+}, Open  ]],
+Cell[16990, 475, 179, 3, 30, "Input",ExpressionUUID->"ab4ed5ff-ed81-43a1-a742-e156e30e0234"],
+Cell[17172, 480, 2048, 62, 304, "Input",ExpressionUUID->"694f5d50-7bdb-4ae1-b2ec-0648ae681d3f"],
+Cell[CellGroupData[{
+Cell[19245, 546, 574, 12, 73, "Input",ExpressionUUID->"a90d9641-e9cd-40f8-a10c-ad14bf5e4139"],
+Cell[19822, 560, 470, 10, 56, "Output",ExpressionUUID->"02ce84fd-41a2-4485-bcf4-cfaad664a9fc"],
+Cell[20295, 572, 350, 5, 161, "Output",ExpressionUUID->"ade82e68-e792-4129-8851-766595b8cfb6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20682, 582, 1938, 43, 178, "Input",ExpressionUUID->"bf9f7e2d-ab1b-4aa4-a42e-42dd8545a363"],
+Cell[22623, 627, 432, 10, 34, "Output",ExpressionUUID->"118620a3-17cb-48d5-bbaf-d7bc9ebdb378"],
+Cell[23058, 639, 521, 11, 56, "Output",ExpressionUUID->"1cd977cc-5eb5-477d-b053-077142de7997"],
+Cell[23582, 652, 360, 8, 34, "Output",ExpressionUUID->"f1d4f605-d76d-4a92-8208-d3b3259fa1c7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23979, 665, 533, 17, 30, "Input",ExpressionUUID->"263fd10d-ab9a-4445-88eb-b3edc0b9070b"],
+Cell[24515, 684, 425, 14, 99, "Output",ExpressionUUID->"7e3996ba-4c30-48a2-a3ae-f932873ae39e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24977, 703, 699, 21, 30, "Input",ExpressionUUID->"e938efd4-7629-474d-bb8d-efe2775b1231"],
+Cell[25679, 726, 3383, 91, 250, "Output",ExpressionUUID->"0371e60a-ab80-49d1-9836-0c624776bd93"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29099, 822, 361, 8, 30, "Input",ExpressionUUID->"d99438d7-38dd-440f-8b24-c09975b99dd8"],
+Cell[29463, 832, 802, 19, 77, "Output",ExpressionUUID->"bb75c05a-a22c-4217-b3fc-6e50773388de"]
+}, Open  ]],
+Cell[30280, 854, 154, 3, 30, "Input",ExpressionUUID->"1110d87f-8e6a-4662-a5fb-31294f9c060f"],
+Cell[30437, 859, 203, 4, 30, "Input",ExpressionUUID->"809f6e22-9dc7-40a6-9f80-196a987a8173"],
+Cell[CellGroupData[{
+Cell[30665, 867, 1158, 30, 115, "Input",ExpressionUUID->"ca2e4104-9f03-479b-9e7f-6ec9753ba552"],
+Cell[31826, 899, 941, 31, 86, "Output",ExpressionUUID->"a81b7b0d-0166-416d-ac47-859aad282bc1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32804, 935, 175, 4, 30, "Input",ExpressionUUID->"b9c50ce8-8fec-448d-b16d-cd96f67a2dd5"],
+Cell[32982, 941, 2019, 46, 390, "Output",ExpressionUUID->"1657438b-e321-4bba-959f-bdf2464dfa69"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35038, 992, 653, 17, 136, "Input",ExpressionUUID->"149c0946-6469-4e3e-b9e9-7d97da1cffb2"],
+Cell[35694, 1011, 633, 14, 56, "Output",ExpressionUUID->"ca7e985f-123f-4e0c-8c3f-df14a96e50c0"]
+}, Open  ]],
+Cell[36342, 1028, 297, 6, 73, "Input",ExpressionUUID->"cdfeb3f4-d030-4f8d-b257-bf5f0beae772"]
+}
+]
+*)
+
